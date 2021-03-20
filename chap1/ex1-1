@@ -1,0 +1,8 @@
+#!/bin/perl
+
+use v5.10;
+
+print "Hello World!\n";
+say "Hello World!";
+say 'Hello World';
+print 'Hello World\n'; # \n not interpolated in single quotes
