@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use warnings;
+
+print "Enter side 1:";
+chomp($side_1 = <STDIN>);
+print "Enter side 2:";
+chomp($side_2 = <STDIN>);
+
+print "Product of sides $side_1 x $side_2 is " . ($side_1 * $side_2) . "\n";

@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use warnings;
+
+print "Enter Message:";
+$message = <STDIN>;
+print "Enter Repeat:";
+chomp($repeat = <STDIN>);
+
+print $message x $repeat;

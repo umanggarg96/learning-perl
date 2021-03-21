@@ -1,0 +1,6 @@
+#!/bin/perl
+
+$r = 12.5;
+$pi = 3.141592654;
+$circumference = 2 * $pi * $r;
+print "Circumference of circle with radius of $r is $circumference\n";
