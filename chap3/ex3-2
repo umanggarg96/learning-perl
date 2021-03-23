@@ -1,0 +1,8 @@
+#!/bin/perl
+
+@words = qw( fred betty barney dino wilma pebblees bamm-bamm );
+chomp(@indeices = <STDIN>);
+foreach (@indeices) {
+    print "$words[$_-1] \n";
+}
+

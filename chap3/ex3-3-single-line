@@ -1,0 +1,9 @@
+#!/bin/perl
+
+chomp(@lines = <STDIN>);
+foreach (@lines) {
+    $_ .= " ";
+}
+@lines = sort @lines;
+print @lines, "\n";
+

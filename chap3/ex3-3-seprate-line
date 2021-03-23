@@ -1,0 +1,5 @@
+#!/bin/perl
+
+@lines = <STDIN>;
+print sort @lines;
+
