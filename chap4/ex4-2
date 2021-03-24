@@ -1,0 +1,24 @@
+#!/bin/perl 
+
+use strict;
+
+sub total () {
+    my $sum = 0;
+    foreach (@_) {
+        $sum += $_;
+    }
+    $sum;
+}
+
+sub test_total () {
+    my $sum = &total(@_);
+    if(@_ <= 10) {
+        print "Sum of (@_) is $sum.\n";
+    } else {
+        print "Sum is $sum.\n";
+    }
+
+}
+
+&test_total(0..1000);
+

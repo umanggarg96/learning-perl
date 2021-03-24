@@ -1,0 +1,20 @@
+#!/bin/perl 
+
+use strict;
+use v5.10;
+
+sub greet() {
+    my ($name) = @_;
+    state @guest_list;
+
+    if(! @guest_list) {
+        print "Hi $name, You are the first one!\n";
+    } else {
+        print "Hi $name, $guest_list[-1] is also here!\n";
+    }
+    push @guest_list, $name;
+}
+
+&greet("Fred");
+&greet("Barney");
+&greet("Wilma");
