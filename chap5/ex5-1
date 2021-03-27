@@ -1,0 +1,8 @@
+#!/bin/perl 
+
+# tac
+
+use warnings;
+
+@lines = <>;
+print reverse @lines

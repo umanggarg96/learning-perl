@@ -1,0 +1,12 @@
+#!/bin/perl
+
+use warnings;
+
+print "Enter some lines\n";
+chomp(@lines = <STDIN>);
+
+$ruler_line = "1234567890" x 4;
+print  "$ruler_line\n";
+foreach (@lines) {
+    printf "%20s\n", $_;
+}

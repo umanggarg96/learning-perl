@@ -1,0 +1,19 @@
+#!/bin/perl
+
+use warnings;
+
+print "Enter some lines\n";
+chomp(@lines = <STDIN>);
+
+$columns = shift @lines;
+$ruler_width = 4;
+if($columns > $ruler_width * 10) {
+    $ruler_width = $columns / 10 + 1;
+}
+
+$ruler_line = "1234567890" x $ruler_width;
+print  "$ruler_line\n";
+
+foreach (@lines) {
+    printf "%${columns}s\n", $_;
+}
