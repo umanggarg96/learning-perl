@@ -1,0 +1,18 @@
+#!/bin/perl
+
+use warnings;
+
+%family_names = (
+    fred => "flintstone",
+    barney => "rubble",
+    wilma => "flintstone"
+);
+
+print "What your name?";
+while(chomp($name = <STDIN>)) {
+    if(exists $family_names{$name}) {
+        print "You are a $family_names{$name}!!!\n";
+    } else {
+        print "I don't know what you are!!!\n";
+    }
+}

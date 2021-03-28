@@ -1,0 +1,14 @@
+#!/bin/perl
+
+use warnings;
+
+my %word_table;
+
+while($word = <>) {
+    chomp($word);
+    $word_table{$word} += 1;
+}
+
+foreach (sort keys %word_table) {
+    printf "\t%-10s : %5d\n", $_, $word_table{$_};
+}
