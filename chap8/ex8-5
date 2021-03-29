@@ -1,0 +1,16 @@
+#!/bin/perl
+
+use v5.10;
+use warnings;
+
+while(<>) {
+    chomp;
+    if(/(?<word>(\w*)a)\b(?<after_word>.{0,5})/) {
+        print "Matched: |$`<$&>$'|\n";
+        print "word contains $+{word}\n";
+        print "after_word contains $+{after_word}\n";
+    }
+    else {
+        print "No match: $_\n";
+    }
+}

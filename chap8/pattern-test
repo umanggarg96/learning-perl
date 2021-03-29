@@ -1,0 +1,11 @@
+#!/bin/perl
+
+while(<>) {
+    chomp;
+    if(/fred/) {
+        print "Matched: |$`<$&>$'|\n";
+    }
+    else {
+        print "No match: $_\n";
+    }
+}

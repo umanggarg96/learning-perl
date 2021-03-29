@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use warnings;
+
+while(<>) {
+    chomp;
+    if(/\s+$/) {
+        print "$_#\n";
+    }
+}
