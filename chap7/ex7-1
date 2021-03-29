@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use warnings;
+
+foreach (<>) {
+    if(/fred/) {
+        print;
+    }
+}
+

@@ -1,0 +1,11 @@
+#!/bin/perl
+
+use warnings;
+
+@lines = <>;
+foreach (@lines) {
+    if(/\./) {
+        print "$_";
+    }
+}
+

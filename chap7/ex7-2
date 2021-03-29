@@ -1,0 +1,12 @@
+#!/bin/perl
+
+use warnings;
+
+@lines = <>;
+foreach (@lines) {
+    chomp;
+    if(/[Ff]red/) {
+        print "$_\n";
+    }
+}
+

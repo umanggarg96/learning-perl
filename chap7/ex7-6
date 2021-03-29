@@ -1,0 +1,13 @@
+#!/bin/perl
+
+use warnings;
+
+@lines = <>;
+foreach (@lines) {
+    if(/fred/) {
+        if(/wilma/) {
+            print "$_";
+        }
+    }
+}
+
