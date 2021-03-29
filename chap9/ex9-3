@@ -1,0 +1,13 @@
+#!/bin/perl
+## Copyright (C) by 2021 by Umang
+
+use warnings;
+
+open OUT, ">", "$ARGV[0].out";
+
+while(<>) {
+    s/fred/\0/gi;
+    s/wilma/Fred/gi;
+    s/\0/Wilma/gi;
+    print OUT;
+}

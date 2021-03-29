@@ -1,0 +1,15 @@
+#!/bin/perl
+## Copyright (C) by 2021 by Umang
+
+use warnings;
+
+my $what = "fred|barney";
+
+while(<>) {
+    chomp;
+    if(/(${what}){3}/) {
+        print "Match    :|$`<$&>$'|\n";
+    } else {
+        print "No Match :|$_|\n";
+    }
+}

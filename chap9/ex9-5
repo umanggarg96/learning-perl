@@ -1,0 +1,28 @@
+#!/bin/perl
+## Copyright (C) by 2021 by Umang
+
+use warnings;
+
+my %process_these;
+foreach (@ARGV) {
+    $process_these{$_} = 1;
+}
+
+while(<>) {
+    if(/\A## Copyright \(C\) by 2021 by Umang/) {
+        delete $process_these{$ARGV};
+
+    }
+}
+
+@ARGV = sort keys %process_these;
+
+if(@ARGV) { 
+    $^I="";
+    while(<>) {
+        if(/\A#!/) {
+            $_ .= "## Copyright (C) by 2021 by Umang\n";
+        }
+        print;
+    }
+}

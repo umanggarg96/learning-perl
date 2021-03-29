@@ -1,0 +1,13 @@
+#!/bin/perl
+## Copyright (C) by 2021 by Umang
+
+use warnings;
+
+$^I=".bak";
+
+while(<>) {
+    if(/\A#!/) {
+        $_ .= "## Copyright (C) by 2021 by Umang\n";
+    }
+    print;
+}

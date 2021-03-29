@@ -1,0 +1,11 @@
+#!/bin/perl
+## Copyright (C) by 2021 by Umang
+
+use warnings;
+
+open OUT, ">", "$ARGV[0].out";
+
+while(<>) {
+    s/fred/Larry/gi;
+    print OUT;
+}
