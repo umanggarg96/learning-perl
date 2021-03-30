@@ -1,0 +1,30 @@
+#!/bin/perl
+
+use warnings;
+
+my $secret_number = int(1 + rand 100);
+$attempts = 0;
+print "Guess the number b/w 1-100 (or quit/exit to end the game):";
+while(<STDIN>) {
+    chomp;
+    ++$attempts;
+
+    if(/exit|quit/i) {
+        print "Exiting...\n";
+        last;
+    }
+    if(/\D+/) {
+        print "Not a number $_. Try again...\n";
+        --$attempts;
+        next;
+    }
+
+    if($_ == $secret_number) {
+        print "Yes!!! you are correct, it took you only $attempts attempts\n";
+        last;
+    } elsif ($_ < $secret_number) {
+        print "Too Low!!! Try higher\n";
+    } else {
+        print "Too High!!! Try lower\n";
+    }
+}

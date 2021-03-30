@@ -1,0 +1,35 @@
+#!/bin/perl
+use warnings;
+use v5.10;
+
+
+$max_column_width = 75;
+
+$longest_value_width = 0;
+foreach (values %ENV) {
+    if(length($_) > $longest_value_width) {
+        $longest_value_width = length($_);
+    }
+    if($longest_value_width >= $max_column_width) {
+        $longest_value_width = $max_column_width;
+        last;
+    }
+}
+
+$longest_key_width = 0;
+foreach (keys %ENV) {
+    if(length($_) > $longest_key_width) {
+        $longest_key_width = length($_);
+    }
+    if($longest_key_width >= $max_column_width) {
+        $longest_key_width = $max_column_width;
+        last;
+    }
+}
+
+$ENV{TO_TRY} = undef;
+$ENV{TO_TRY_AGAIN} = undef;
+
+while( ($key, $value) = each %ENV) {
+    printf "%${longest_key_width}s  : %${longest_value_width}s\n", $key, $value // "(undefined value)";
+}
