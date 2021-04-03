@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use warnings;
+
+
+foreach (@ARGV) {
+    if(-r -w -o) {
+        print "$_ is Readable, Writable and owned by me\n";
+    }
+}

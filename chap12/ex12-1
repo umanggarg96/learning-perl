@@ -1,0 +1,30 @@
+#!/bin/perl
+
+use warnings;
+
+sub check_file_mode() {
+    die "check_file_mode : Expected one filename" if @_ != 1;
+    
+    ($filename) = @_;
+
+    $is_readable    = 0;
+    $is_writeable   = 0;
+    $is_executable  = 0;
+
+    if(-e $filename) {
+        if(-r _) { $is_readable   = 1; }
+        if(-w _) { $is_writeable  = 1; }
+        if(-x _) { $is_executable = 1; }
+        
+        printf "$filename is %s %s %s\n", $is_readable   ? "READABLE"   : "",
+                                          $is_writeable  ? "WRITABLE"   : "",
+                                          $is_executable ? "EXECUTABLE" : "",
+    }
+    else {
+        print "$filename does not exits\n";
+    }
+}
+
+foreach (@ARGV) {
+    &check_file_mode($_);
+}

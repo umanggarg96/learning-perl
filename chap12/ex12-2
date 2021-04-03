@@ -1,0 +1,17 @@
+#!/bin/perl
+
+use warnings;
+
+$oldest = 0;
+my $name;
+
+foreach (@ARGV) {
+    if( -e $_ ) {
+        if($oldest < -M $_) {
+            $oldest = -M _;
+            $name = $_;
+        }
+    }
+}
+
+print "Oldest file is $name with age $oldest\n";
