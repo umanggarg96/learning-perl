@@ -1,0 +1,21 @@
+#!/bin/perl
+
+use File::Spec;
+use File::Basename;
+
+use warnings;
+
+die "Usage: ex13-6 <file-name> <link-name>\n" if (@ARGV != 2);
+
+($file_name, $link_name) = @ARGV;
+
+die "No file with name $file_name : $!\n" if (! -e $file_name);
+die "$file_name is dir, can't create hard link to dir\n" if (-d $file_name);
+
+if (-d $link_name) {
+    $base_name = basename $file_name;
+    $link_name = File::Spec->catfile($link_name, $base_name);
+}
+
+link $file_name, $link_name || die "Unable to create link $link_name to file $file_name : $!\n";
+

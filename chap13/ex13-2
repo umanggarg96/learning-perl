@@ -1,0 +1,15 @@
+#!/bin/perl
+
+use warnings;
+
+print "Enter a directory -\n";
+chomp($dir_name = <STDIN>);
+if($dir_name =~ /\A\s*\Z/) {
+    chdir || die "Can't change to your home $!\n";
+} else {
+    chdir $dir_name || die "Can't change to $dir_name $!\n";
+}
+
+
+@files = sort  glob '* .*';
+print "Files in the directory $dir_name -> \n\t" . (join "\n\t", @files) . "\n";

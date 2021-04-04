@@ -1,0 +1,30 @@
+#!/bin/perl
+
+use File::Spec;
+use File::Basename;
+
+use warnings;
+
+die "Usage: ex13-7 [-s] <file-name> <link-name>\n" unless (@ARGV == 2 || @ARGV == 3);
+
+$is_soft_link = 0;
+if($ARGV[0] eq "-s") {
+    shift @ARGV;
+    $is_soft_link = 1;
+}
+($file_name, $link_name) = @ARGV;
+
+die "No file with name $file_name : $!\n" if (! -e $file_name);
+die "$file_name is dir, can't create hard link to dir\n" if (!$is_soft_link && (-d $file_name));
+
+if (-d $link_name) {
+    $base_name = basename $file_name;
+    $link_name = File::Spec->catfile($link_name, $base_name);
+}
+
+if($is_soft_link) {
+    symlink $file_name, $link_name || die "Unable to create link $link_name to file $file_name : $!\n";
+} else {
+    link $file_name, $link_name || die "Unable to create link $link_name to file $file_name : $!\n";
+}
+

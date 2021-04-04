@@ -1,0 +1,20 @@
+#!/bin/perl
+
+use File::Spec;
+use File::Basename;
+
+use warnings;
+
+die "Usage: ex13-5 <old_name> <new_name>\n" if (@ARGV != 2);
+
+($old_name, $new_name) = @ARGV;
+
+die "No file with name $old_name : $!\n" if (! -e $old_name);
+
+if (-d $new_name) {
+    $filename = basename $old_name;
+    $new_name = File::Spec->catfile($new_name, $filename);
+}
+
+rename $old_name, $new_name || die "Unable to rename $old_name to $new_name : $!\n";
+

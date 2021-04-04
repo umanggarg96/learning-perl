@@ -1,0 +1,19 @@
+#!/bin/perl
+
+use warnings;
+
+print "Enter a directory -\n";
+chomp($dir_name = <STDIN>);
+
+my $dh;
+if($dir_name =~ /\A\s*\Z/) {
+    opendir $dh, $ENV{HOME} || die "Can't open home $ENV{HOME} : $!\n";
+} else {
+    opendir $dh, $dir_name || die "Can't open $dir_name : $!\n";
+}
+
+print "Files in the directory $dir_name -> \n";
+foreach (sort readdir $dh) {
+    next if /\A\./;
+    print "\t$_\n";
+}

@@ -1,0 +1,11 @@
+#!/bin/perl
+
+use warnings;
+
+
+foreach (glob "* .*") {
+    if(-l) {
+        $filename = readlink $_;
+        print "$_ -> $filename\n";
+    }
+}

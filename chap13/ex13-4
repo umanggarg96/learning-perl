@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use warnings;
+
+die "Usage: ex13-4 <files>\n" if (@ARGV < 1);
+
+foreach (@ARGV) {
+    print "Deleting $_ ...\n";
+    unlink $_ || warn "Unable to delete $_ : $!\n";
+}
