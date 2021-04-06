@@ -1,0 +1,17 @@
+#!/bin/perl
+
+use warnings;
+
+chomp(my $string = <STDIN>);
+chomp(my $sub_string = <STDIN>);
+
+my $found_idx = -1;
+my @locations;
+while(($found_idx = index($string, $sub_string, $found_idx+1)) >= 0) {
+    push @locations, $found_idx;
+}
+if(@locations) { 
+    print "Found '$sub_string' in '$string' at locations " . join (",", @locations) . "\n";
+} else {
+    print "Did not find '$sub_string' in '$string'\n";
+}

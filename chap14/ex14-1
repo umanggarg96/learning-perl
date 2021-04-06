@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use warnings;
+
+chomp(@numbers = <>);
+
+@numbers = sort {$a <=> $b} @numbers;
+
+printf "%20g\n" x @numbers, @numbers;
+
