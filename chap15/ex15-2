@@ -1,0 +1,10 @@
+#!/bin/perl
+
+use warnings;
+
+open STDOUT, ">", "ls.out" or die "Can't open ls.out for write : $!\n";
+open STDERR, ">", "ls.err" or die "Can't open ls.err for write : $!\n";
+
+chdir "/" or die "Can't change to root / : $!\n";
+
+exec "ls", "-l";

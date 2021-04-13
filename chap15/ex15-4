@@ -1,0 +1,81 @@
+#!/bin/perl
+
+use warnings;
+
+$SIG{HUP}      = 'HUP_handler';
+$SIG{INT}      = 'INT_handler';
+$SIG{QUIT}     = 'QUIT_handler';
+$SIG{ILL}      = 'ILL_handler';
+$SIG{TRAP}     = 'TRAP_handler';
+$SIG{ABRT}     = 'ABRT_handler';
+$SIG{BUS}      = 'BUS_handler';
+$SIG{FPE}      = 'FPE_handler';
+$SIG{KILL}     = 'KILL_handler';
+$SIG{USR1}     = 'USR1_handler';
+$SIG{SEGV}     = 'SEGV_handler';
+$SIG{USR2}     = 'USR2_handler';
+$SIG{PIPE}     = 'PIPE_handler';
+$SIG{ALRM}     = 'ALRM_handler';
+$SIG{TERM}     = 'TERM_handler';
+$SIG{STKFLT}   = 'STKFLT_handler';
+$SIG{CHLD}     = 'CHLD_handler';
+
+sub HUP_handler {
+    print "Recived HUP (1) Signal\n";
+}
+sub INT_handler {
+    print "Recived INT (2) Signal\n";
+    exit();
+}
+sub QUIT_handler {
+    print "Recived QUIT (3) Signal\n";
+}
+sub ILL_handler {
+    print "Recived ILL (4) Signal\n";
+}
+sub TRAP_handler {
+    print "Recived TRAP (5) Signal\n";
+}
+sub ABRT_handler {
+    print "Recived ABRT (6) Signal\n";
+}
+sub BUS_handler {
+    print "Recived BUS (7) Signal\n";
+}
+sub FPE_handler {
+    print "Recived FPE (8) Signal\n";
+}
+sub KILL_handler {
+    print "Recived KILL (9) Signal\n";
+}
+sub USR1_handler {
+    print "Recived USR1 (10) Signal\n";
+}
+sub SEGV_handler {
+    print "Recived SEGV (11) Signal\n";
+}
+sub USR2_handler {
+    print "Recived UST2 (12) Signal\n";
+}
+sub PIPE_handler {
+    print "Recived PIPE (13) Signal\n";
+}
+sub ALRM_handler {
+    print "Recived ALRM (14) Signal\n";
+}
+sub TERM_handler {
+    print "Recived TERM (15) Signal\n";
+}
+sub STKFLT_handler {
+    print "Recived STKFLT (16) Signal\n";
+}
+sub CHLD_handler {
+    print "Recived CHLD (17) Signal\n";
+}
+
+
+print "PID $$\n";
+while(1) {
+    print("Waiting ...\n");
+    sleep(10);
+}

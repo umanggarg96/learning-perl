@@ -1,0 +1,9 @@
+#!/bin/perl
+
+use warnings;
+
+if(`date` =~ /^S/) {
+    print "Its weekend!!\n";
+} else {
+    print "Gotta work :(\n";
+}
